@@ -1,0 +1,23 @@
+{
+  "name": "mail-handler",
+  "version": "1.0.0",
+  "description": "Used for handling email requests from external sources",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/citypay/node-mail-handler.git"
+  },
+  "author": "gary.feltham@citypay.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/citypay/node-mail-handler/issues"
+  },
+  "homepage": "https://github.com/citypay/node-mail-handler#readme",
+  "dependencies": {
+    "email-validator": "git+https://git@github.com/citypay/node-email-validator.git",
+    "recaptcha": "git+https://git@github.com/citypay/node-recaptcha.git"
+  }
+}
