@@ -17,7 +17,11 @@
   },
   "homepage": "https://github.com/citypay/node-mail-handler#readme",
   "dependencies": {
+    "aws-sdk": "^2.54.0",
     "email-validator": "git+https://git@github.com/citypay/node-email-validator.git",
     "recaptcha": "git+https://git@github.com/citypay/node-recaptcha.git"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0"
   }
 }
