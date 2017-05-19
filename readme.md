@@ -40,3 +40,51 @@ let data = {
 
 If the body starts with a html tag, the email is treated as a HTML email otherwise 
 it is sent as plain text. 
+
+## Brandability
+
+Branding can be co-ordinated using a configurable structure for emails. This can be added by
+presenting a branding property on the root of the incoming data that refers to 
+
+- _name_ - a name given to the brand such as your company name. Naming allows for multiple styles of brand to be applied for different emails
+- _css_ - a css style sheet which can be used and embedded in the style section of the email
+- _header_ a header which is inserted at the top of the email
+- _footer_ a footer which is appended to the bottom of the email
+
+```javascript
+let data = {
+    branding: [
+        {
+            "name": "brand1",
+            "css": "assets/style.css",
+            "header": "assets/header.html",
+            "footer": "assets/footer.html"
+        }
+    ]
+    ...
+    }
+```
+
+To set the brand of the email you will aslo need to add either 
+1. a brand reference in each mail property
+
+```javascript
+let data = {
+    mail: [{
+        to: [ "lambda@foo.com" ],
+        // mail level brand
+        brand: "brand1",
+        ...
+
+```
+
+or
+2. a brand reference in the root property
+
+```javascript
+let data = {
+    // global level brand
+    brand: "brand1"
+    ...
+
+```
