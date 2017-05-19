@@ -1,5 +1,5 @@
 const fs = require('fs');
-const recaptcha = require('node-recaptcha');
+const recaptcha = require('recaptcha');
 const winston = require('winston');
 const aws = require('aws-sdk');
 const ses = new aws.SES({
