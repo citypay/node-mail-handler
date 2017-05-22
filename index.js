@@ -15,6 +15,15 @@ const ses = new aws.SES({
 exports.handler = function (err, completionHandler, config) {
     'use strict';
 
+    // default to
+    config = Object.assign({
+        deliver: true
+    }, config);
+
+    if (config.deliver === undefined) {
+        config.deliver = true;
+    }
+
     let validationError = e => {
         winston.info(`mail-handler validation ...Failure (${e})`);
         err(e);
@@ -182,14 +191,16 @@ ${spec.css}
 
             // console.log(params);
 
-            ses.sendEmail(params, function (err, data) {
-                if (err) {
-                    winston.error(err);
-                    errorHandler(err);
-                } else {
-                    successHandler(data.MessageId);
-                }
-            });
+            if (config.deliver) {
+                ses.sendEmail(params, function (err, data) {
+                    if (err) {
+                        winston.error(err);
+                        errorHandler(err);
+                    } else {
+                        successHandler(data.MessageId);
+                    }
+                });
+            }
 
         } catch (e) {
             errorHandler(e);
