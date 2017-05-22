@@ -200,6 +200,8 @@ ${spec.css}
                         successHandler(data.MessageId);
                     }
                 });
+            } else {
+                winston.warn('Mail delivery disabled');
             }
 
         } catch (e) {
