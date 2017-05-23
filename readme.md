@@ -29,6 +29,7 @@ let data = {
 | deliver | optional | Defaults to `true`. A non `true` value will result in validation running but the email not being sent |
 | recaptcha.response | required | The response packet from Google for a reCAPTCHA process using node-recaptcha. |
 | recaptcha.secret   | required | The secret value provided by Google for reCAPTCHA |
+| recaptcha.remoteip | required | The end user's ip address |
 | mail               | required | An array of mail items which are sent via the script. Multiple emails can be sent by the handler process. |
 | mail.[n].from      | required | The sender o the email |
 | mail.[n].to        | required | An array of addresses to send the email to |

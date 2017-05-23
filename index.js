@@ -257,6 +257,8 @@ ${spec.css}
     recaptcha({
         response: config.recaptcha.response,
         secret: config.recaptcha.secret,
+        remoteip: config.recaptcha.remoteip,
+        enabled: config.recaptcha.enabled,
         success: startDeliveryProc,
         err: err,
         failure: function () {
