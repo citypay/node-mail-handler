@@ -1,6 +1,6 @@
 {
   "name": "mail-handler",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Used for handling email requests from external sources",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   "dependencies": {
     "aws-sdk": "^2.54.0",
     "email-validator": "git+https://git@github.com/citypay/node-email-validator.git",
-    "recaptcha": "git+https://git@github.com/citypay/node-recaptcha.git#v1.0.1"
+    "recaptcha": "git+https://git@github.com/citypay/node-recaptcha.git#v1.0.2"
   },
   "devDependencies": {
     "eslint": "^3.19.0"
