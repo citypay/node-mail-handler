@@ -1,5 +1,7 @@
 # AWS SES Mail Handler
 
+[![Build Status](https://circleci.com/gh/citypay/node-mail-handler.svg?&style=shield)](https://circleci.com/gh/citypay/node-mail-handler)
+
 Used to send email via AWS SES using recaptcha and email validation.
 
 The process uses an incoming event packet that triggers data to be sent to an email
