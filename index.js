@@ -253,18 +253,27 @@ ${spec.css}
 
     };
 
-    // check the recaptcha settings first
-    recaptcha({
-        response: config.recaptcha.response,
-        secret: config.recaptcha.secret,
-        remoteip: config.recaptcha.remoteip,
-        enabled: config.recaptcha.enabled,
-        success: startDeliveryProc,
-        err: err,
-        failure: function () {
-            err('Google reCaptcha success failure');
-        }
-    });
+
+    if (config.recaptcha.enabled) {
+
+        // check the recaptcha settings first
+        recaptcha({
+            response: config.recaptcha.response,
+            secret: config.recaptcha.secret,
+            remoteip: config.recaptcha.remoteip,
+            enabled: config.recaptcha.enabled,
+            success: startDeliveryProc,
+            err: err,
+            failure: function () {
+                err('Google reCaptcha success failure');
+            }
+        });
+
+    } else {
+
+        startDeliveryProc();
+
+    }
 
 
 };
