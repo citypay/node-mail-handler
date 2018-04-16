@@ -29,9 +29,10 @@ let data = {
 | Key | Required | Description |
 |-----|---|-------------|
 | deliver | optional | Defaults to `true`. A non `true` value will result in validation running but the email not being sent |
-| recaptcha.response | required | The response packet from Google for a reCAPTCHA process using node-recaptcha. |
-| recaptcha.secret   | required | The secret value provided by Google for reCAPTCHA |
-| recaptcha.remoteip | required | The end user's ip address |
+| recaptcha.enabled  | required | Whether to enable Google reCAPTCHA using node-recaptcha. A value of false will bypass the service. |
+| recaptcha.response | optional | If enabled. The response packet from Google for a reCAPTCHA process using node-recaptcha. |
+| recaptcha.secret   | optional | If enabled. The secret value provided by Google for reCAPTCHA |
+| recaptcha.remoteip | optional | If enabled. The end user's ip address |
 | mail               | required | An array of mail items which are sent via the script. Multiple emails can be sent by the handler process. |
 | mail.[n].from      | required | The sender o the email |
 | mail.[n].to        | required | An array of addresses to send the email to |
@@ -91,4 +92,25 @@ let data = {
     brand: "brand1"
     ...
 
+```
+
+## Sending Mail with Recaptcha Disabled
+
+You are able to send mail in a trusted environment without recaptcha enabled by 
+simply setting recaptcha enabled as false. 
+```javascript
+let data = {
+    // used to verify the request
+    recaptcha: {
+        enabled: false
+    },
+    mail: [{
+        to: [ "lambda@foo.com" ],
+        cc: [],
+        bcc: [],
+        subject: "Test From Lambda Code",
+        body: "<p>I may contain html!? <h2>adsfa</h2>",
+        from: "lambda@bar.com"
+    }]
+};
 ```
