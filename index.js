@@ -33,7 +33,7 @@ exports.handler = function (err, completionHandler, config) {
     if (!config.recaptcha) {
         return validationError('No recaptcha settings provided');
     }
-    if (!config.recaptcha.enabled) {
+    if (config.recaptcha.enabled) {
         if (!config.recaptcha.response) {
             return validationError('No recaptcha response provided');
         }
